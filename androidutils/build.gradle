@@ -1,7 +1,6 @@
-plugins {
-    id 'com.android.library'
-    id 'com.github.dcendents.android-maven'
-}
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.sweetying520'
 
 android {
     compileSdkVersion 29
@@ -31,4 +30,31 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+}
+
+apply plugin: 'com.github.panpf.bintray-publish'
+
+allprojects {
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.panpf.bintray-publish:bintray-publish:1.0.0'
+    }
+}
+
+publish {
+    userOrg = 'sweetying520'
+    groupId = 'com.github.sweetying520'
+    artifactId = 'AndroidUtils'
+    publishVersion = '1.0.0'
+    desc = 'AndroidUtils is a library of tools to help developers improve their productivity'
+    website = 'https://github.com/sweetying520/AndroidUtils'
 }
