@@ -21,4 +21,14 @@ public class ToastUtils {
         Toast.makeText(mContext, mShowText, Toast.LENGTH_SHORT).show();
     }
 
+
+    /**
+     * 展示长时间Toast
+     *
+     * @param mContext 上下文
+     * @param mShowText 展示的内容
+     */
+    public static void showLongToast(Context mContext,String mShowText){
+        Toast.makeText(mContext, mShowText, Toast.LENGTH_LONG).show();
+    }
 }
