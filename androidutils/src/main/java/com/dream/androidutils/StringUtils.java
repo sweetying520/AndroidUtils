@@ -12,7 +12,6 @@ public class StringUtils {
      * 获取字符串的字节数组
      */
     public static byte[] getByteArray(String str){
-        if(str == null)return new byte[0];
         return str.getBytes();
     }
 
@@ -20,7 +19,6 @@ public class StringUtils {
      * 将字符串转换成字符数组
      */
     public static char[] getCharArray(String str){
-        if(str == null)return new char[0];
         return str.toCharArray();
     }
 }
